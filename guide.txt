@@ -3,3 +3,9 @@
 >>npm install nodemon --save-dev
 >>to install express
 >>npm install --save express
+
+
+//*****************************//
+handling incomming requests
+
+>>npm install --save body-parser

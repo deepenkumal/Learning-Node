@@ -1,19 +1,23 @@
-const http = require('http');
-const express = require('express');
+const http = require("http");
+const express = require("express");
+const parserBody = require("body-parser");
 const app = express();
 
-app.use((req,res,next)=>{
-    console.log('Hello middleware');
-    res.write('<h1>Hello middleware!</h1>')
-    next();
-})
+app.use(parserBody.urlencoded({ extended: false }));
 
-app.use((req,res,next)=>{
-    console.log('Another middleware!!');
-    res.write('<h1>Hello Another middleware!</h1>')
+app.use("/add-product", (req, res, next) => {
+  res.send(
+    '<form action="/product" method ="POST" > <input type="text" name="title" > <button type="submit" >Add product</button></form>'
+  );
+});
 
-})
+app.use("/product", (req, res, next) => {
+  console.log(req.body);
+  res.redirect("/");
+});
 
-// create server
-const server = http.createServer(app)
-server.listen(3000); //server started at port 3000;
+app.use("/", (req, res, next) => {
+  res.send("<h1> This is home page !</h1>");
+});
+
+app.listen(3000);
