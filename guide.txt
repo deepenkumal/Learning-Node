@@ -9,3 +9,13 @@
 handling incomming requests
 
 >>npm install --save body-parser
+
+install express templating engines
+3 most popular engines are pug, ejs, express-handlebars
+>>npm install --save pug ejs express-handlebars
+>>npm install express-handlebars
+
+
+
+app.set('view engine''pug);
+app.set('views','views');
