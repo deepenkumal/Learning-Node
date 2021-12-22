@@ -22,3 +22,9 @@ button:hover{
     color: white;
     background-color:rgb(56, 45, 94);
 }
+
+.content {
+    width:20rem;
+    max-width: 90%;
+    margin: auto;
+}
