@@ -6,7 +6,7 @@ module.exports = class Product{
         this.title = t;
     }
     save(){
-        products.push(this)
+        products.push(this);
     }
     static fetchAll(){
         return products;
